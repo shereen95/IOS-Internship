@@ -58,7 +58,7 @@ class Application {
         var resultbugs :[Bug]
         for  i in bugs.count
         {
-            if bugs[i].state == state && bugs[i].timestamp == timeRange
+            if (bugs[i].state == state) && (bugs[i].timestamp == timeRange)
             {
                 resultbugs = bugs[i]
             }
