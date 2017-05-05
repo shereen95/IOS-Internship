@@ -56,7 +56,7 @@ class Application {
     func findBugs(state: Bug.State?, timeRange: TimeRange) -> [Bug] {
         // To be implemented
         var resultbugs :[Bug]
-        for  i in bugs.count
+        for  var i in (0..<bugs.count)
         {
             if ((bugs[i].state == state) && 
             (bugs[i].timestamp == timeRange.pastDay || bugs[i].timestamp == timeRange.pastWeek ||bugs[i].timestamp == timeRange.pastMonth ))
