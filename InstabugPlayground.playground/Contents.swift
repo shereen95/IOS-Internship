@@ -10,7 +10,6 @@ class Bug {
     let state: State
     let timestamp: Date
     let comment: String
-    let jsonString :String
     
     init(state: State, timestamp: Date, comment: String) {
         // To be implemented
@@ -21,6 +20,7 @@ class Bug {
     
     init(jsonString: String) throws {
         // To be implemented
+        // split string to put every part in variable.
         var array = jsonString.componentsSeparatedByString(",")
         var parts = array[0].componentsSeparatedByString(":")
         var parts1 = array[1].componentsSeparatedByString(":")
