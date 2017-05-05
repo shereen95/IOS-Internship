@@ -21,11 +21,13 @@ class Bug {
     init(jsonString: String) throws {
         // To be implemented
         // split string to put every part in variable.
-        var array = jsonString.componentsSeparatedByString(",")
-        var parts = array[0].componentsSeparatedByString(":")
-        var parts1 = array[1].componentsSeparatedByString(":")
-        var parts2 = array[2].componentsSeparatedByString(":")
-        if parts [1] == "open"
+        let fullNameArr = s.characters.split{$0 == ","}.map(String.init)
+        let stateArr = s.characters.split{$0 == ":"}.map(String.init)
+        let dateArr = s.characters.split{$0 == ":"}.map(String.init)
+        let commentArr = s.characters.split{$0 == ":"}.map(String.init)
+        let commentStringArr = s.characters.split{$0 == "}"}.map(String.init)
+     
+        if stateArr [1] == "open"
         {
             self.state = State.open
         }
@@ -33,8 +35,8 @@ class Bug {
         {
             self.state = State.closed
         }
-        self.timestamp = parts1 [1]
-        self.comment = parts2 [1]
+        self.timestamp = dateArr [1]
+        self.comment = commentStringArr [0]
     }
 }
 
