@@ -21,11 +21,11 @@ class Bug {
     init(jsonString: String) throws {
         // To be implemented
         // split string to put every part in variable.
-        let fullNameArr = s.characters.split{$0 == ","}.map(String.init)
-        let stateArr = s.characters.split{$0 == ":"}.map(String.init)
-        let dateArr = s.characters.split{$0 == ":"}.map(String.init)
-        let commentArr = s.characters.split{$0 == ":"}.map(String.init)
-        let commentStringArr = s.characters.split{$0 == "}"}.map(String.init)
+        let fullNameArr = jsonString.characters.split{$0 == ","}.map(String.init)
+        let stateArr = fullNameArr[0].characters.split{$0 == ":"}.map(String.init)
+        let dateArr = fullNameArr[1].characters.split{$0 == ":"}.map(String.init)
+        let commentArr = fullNameArr[2].characters.split{$0 == ":"}.map(String.init)
+        let commentStringArr = commentArr[1].characters.split{$0 == "}"}.map(String.init)
      
         if stateArr [1] == "open"
         {
