@@ -58,7 +58,8 @@ class Application {
         var resultbugs :[Bug]
         for  i in bugs.count
         {
-            if (bugs[i].state == state) && (bugs[i].timestamp == timeRange)
+            if (bugs[i].state == state) && 
+            (bugs[i].timestamp == timeRange.pastDay || bugs[i].timestamp == timeRange.pastWeek ||bugs[i].timestamp == timeRange.pastMonth )
             {
                 resultbugs = bugs[i]
             }
